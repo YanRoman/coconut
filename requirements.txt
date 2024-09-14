@@ -1,0 +1,10 @@
+# Основное
+fastapi~=0.114.2
+uvicorn[standard]
+loguru~=0.7.2
+
+# Ml
+numpy>=2.1.1
+pandas>=2.2.2
+scikit-learn>=1.5.1
+tqdm>=4.66.2

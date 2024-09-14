@@ -1,0 +1,15 @@
+# PyCharm
+.idea/
+
+# Virtual Environment
+venv/
+env/
+
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# csv
+*.csv
