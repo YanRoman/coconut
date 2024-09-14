@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-import data_loader
-from algs.global_top import global_top_predict
+from src import data_loader
+from src.algs.global_top import global_top_predict
 
 app = FastAPI()
 df = data_loader.create_df("chunk_0.csv")
