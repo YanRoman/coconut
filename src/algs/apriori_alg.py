@@ -2,15 +2,21 @@ import numpy as np
 import pandas as pd
 from efficient_apriori import apriori
 from src.data_loader import *
-# import plotly.express as px
 
 
-def apriori_():
-    file_path = "chunk_1.csv"
-    df = pd.read_csv(file_path)
-    tmp = extract_transactions(df)
-    transactions = [tuple(row[1]) for row in tmp.values.tolist()]
-    tr2 = [tuple(map(str, tpl)) for tpl in transactions]
-    print(tr2[:2])
-    itemsets, rules = apriori(tr2, min_support=0.2)
-    print(itemsets, rules)
+ITEMSETS = {}
+RULES = []
+MIN_SUPPORT = 0.001
+MIN_CONFIDENCE = 0.5
+
+
+def apriori_(dataset):
+    global ITEMSETS, RULES
+    transactions = [tuple(row[1]) for row in extract_transactions(dataset).values.tolist()]
+    ITEMSETS, RULES = apriori(transactions, min_support=MIN_SUPPORT, min_confidence=MIN_CONFIDENCE)
+
+
+def apriori_pred(user_id):
+    for rule in RULES:
+        print(type(rule))
+        print(rule)
