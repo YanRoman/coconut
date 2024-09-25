@@ -23,9 +23,8 @@ def create_df(file_path):
 
 
 def extract_transactions(df):
-    transactions = df.groupby('user_session')['product_id'].apply(list).reset_index()
-    transactions.columns = ['user_session', 'product_ids']
-    transactions = transactions[transactions['product_ids'].apply(len) > 1]
+    transactions = df.groupby(['user_session', 'user_id'])['product_id'].apply(list).reset_index()
+    transactions.columns = ['user_session', 'user_id', 'product_ids']
     return transactions
 
 
