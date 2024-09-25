@@ -8,3 +8,6 @@ numpy>=2.1.1
 pandas>=2.2.2
 scikit-learn>=1.5.1
 tqdm>=4.66.2
+efficient_apriori==2.0.5
+implicit==0.7.2
+scipy==1.14.1
